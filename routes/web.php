@@ -15,4 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('employee', 'EmployeeController');
+// Route::resource('employee', 'EmployeeController');
+Route::get('/employee', 'EmployeeController@regist')->name('employee');
+
+Route::get('/employee/list', function() {
+  return view('employee/list');
+})->name('employee.list');
+
+Route::get('/employee/detail', function() {
+  return view('employee/detail');
+})->name('employee.detail');
+
+Route::get('/employee/regist', 'EmployeeController@regist')->name('employee.regist');
+
+Route::post('/employee/regist', 'EmployeeController@regist')->name('employee.regist');
+
+Route::post('/employee/confirm', 'EmployeeController@confirm')->name('employee.confirm');
+
+Route::post('/employee/done', 'EmployeeController@done')->name('employee.done');

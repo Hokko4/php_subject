@@ -20,4 +20,21 @@ class EmployeeController extends Controller
       $emp->save();
       return redirect()->route('employee.index');
     }
+
+    public function regist() {
+      return view('employee/regist')->with('employee', new Employee());
+    }
+
+    public function confirm(Request $request) {
+
+      return view('employee/confirm')->with('employee', $request);
+    }
+
+    public function done(Request $request) {
+      $emp = new Employee();
+      $emp->fill($request->all());
+      $emp->save();
+      return view('employee/done')->with('employee', $request);
+      return redirect()->route('emoloyee.regist');
+    }
 }

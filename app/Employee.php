@@ -11,8 +11,12 @@ class Employee extends Model
     use SoftDeletes;
 
     protected $fillable = [
-      'name',
-      'done',
+      'lastName',
+      'firstName',
+      'lastNameKana',
+      'firstNameKana',
+      'image',
+      'comments'
     ];
 
     //明示的にテーブル名を指定する
