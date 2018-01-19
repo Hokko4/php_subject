@@ -35,6 +35,6 @@ class EmployeeController extends Controller
       $emp->fill($request->all());
       $emp->save();
       return view('employee/done')->with('employee', $request);
-      return redirect()->route('emoloyee.regist');
+      // return redirect()->route('emoloyee.regist');
     }
 }

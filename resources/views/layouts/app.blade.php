@@ -6,20 +6,20 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   </head>
   <body>
-    <h1>@yield('h1')</h1>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <p>
-          <span class="breadcrumb"><b>社員情報入力</b>＞確認＞完了</span>
-        </p>
-      </div>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1>@yield('h1')</h1>
+          <p>
+            <span class="breadcrumb"><b>社員情報入力</b>＞確認＞完了</span>
+          </p>
+        </div>
 
-      <div class="panel-body">
         @yield('content')
-      </div>
 
-      <div class="panel-footer">
-        {{ link_to_route('employee.regist', '戻る')}}
+        <div class="panel-footer">
+          {{ link_to_route('employee.regist', '戻る', ['class' => 'btn btn-primary']) }}
+        </div>
       </div>
     </div>
 
