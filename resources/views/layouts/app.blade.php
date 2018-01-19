@@ -18,7 +18,7 @@
         @yield('content')
 
         <div class="panel-footer">
-          {{ link_to_route('employee.regist', '戻る', ['class' => 'btn btn-primary']) }}
+          {{ link_to_route('employee.regist', '戻る') }}
         </div>
       </div>
     </div>

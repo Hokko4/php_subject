@@ -35,7 +35,8 @@ class EmployeeRequest extends FormRequest
     public function messages()
     {
         return [
-
+          'lastName.required' => '名字は必須項目です',
+          'firstName.required' => '名前は必須項目です',
         ];
     }
 

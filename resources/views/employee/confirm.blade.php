@@ -10,18 +10,27 @@
   <div class="panel-body">
     <div class="form-group">
       <div class="col-sm-6">
-        <p>名前</p>
-        <p>{{ $employee->lastName }}</p>
+        <?php var_dump($errors) ?>
       </div>
-      {!! Form::label('firstName', '名前', ['class' => 'col-sm-3 control-label']) !!}
+      <div class="">
+        {{ $errors->first('lastName') }}
+        {{ $errors->first('firstName') }}
+        {{ $errors->first('lastNameKana') }}
+        {{ $errors->first('firstNameKana') }}
+      </div>
+      {!! Form::label('lastName', '社員氏名（名字）', ['class' => 'col-sm-3 control-label']) !!}
+      <div class="col-sm-6">
+        {!! Form::text('lastName', $employee->lasttName, ['id' => 'lastName', 'class' => 'form-control']) !!}
+      </div>
+      {!! Form::label('firstName', '社員氏名（名前）', ['class' => 'col-sm-3 control-label']) !!}
       <div class="col-sm-6">
         {!! Form::text('firstName', $employee->firstName, ['id' => 'firstName', 'class' => 'form-control']) !!}
       </div>
-      {!! Form::label('lastNameKana', '苗字カナ', ['class' => 'col-sm-3 control-label']) !!}
+      {!! Form::label('lastNameKana', '社員カナ（名字）', ['class' => 'col-sm-3 control-label']) !!}
       <div class="col-sm-6">
         {!! Form::text('lastNameKana', $employee->lastNameKana, ['id' => 'lastNameKana', 'class' => 'form-control']) !!}
       </div>
-      {!! Form::label('firstNameKana', '名前カナ', ['class' => 'col-sm-3 control-label']) !!}
+      {!! Form::label('firstNameKana', '社員カナ（名前）', ['class' => 'col-sm-3 control-label']) !!}
       <div class="col-sm-6">
         {!! Form::text('firstNameKana', $employee->firstNameKana, ['id' => 'firstNameKana', 'class' => 'form-control']) !!}
       </div>
