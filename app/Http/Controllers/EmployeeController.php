@@ -47,10 +47,18 @@ class EmployeeController extends Controller
       ];
 
       $messages = [
-        'lastName.required' => '社員氏名（名字）を再入力してください',
-        'firstName.required' => '社員氏名（名前）を再入力してください',
-        'lastNameKana.required' => '社員カナ（名字）を再入力してください',
-        'firstNameKana.required' => '社員カナ（名前）を再入力してください'
+        'lastName.required' => '社員氏名（名字）は必須です',
+        'firstName.required' => '社員氏名（名前）は必須です',
+        'lastNameKana.required' => '社員カナ（名字）は必須です',
+        'firstNameKana.required' => '社員カナ（名前）は必須です',
+        'lastName.min' => '1文字以上入力してください',
+        'firstName.min' => '1文字以上入力してください',
+        'lastNameKana.min' => '1文字以上入力してください',
+        'firstNameKana.min' => '1文字以上入力してください',
+        'lastName.max' => '5文字以下で入力してください',
+        'firstName.max' => '5文字以下で入力してください',
+        'lastNameKana.max' => '15文字以下で入力してください',
+        'firstNameKana.max' => '15文字以下で入力してください'
       ];
       // $valid = $request->validate([
       //   $rules
