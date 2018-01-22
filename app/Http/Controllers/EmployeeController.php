@@ -40,17 +40,17 @@ class EmployeeController extends Controller
       $input = $request->all();
 
       $rules = [
-          'lastName'      => 'required',
-          'firstName'     => 'required',
-          'lastNameKana'  => 'required',
-          'firstNameKana' => 'required'
+          'lastName'      => 'required|min:1|max:5',
+          'firstName'     => 'required|min:1|max:5',
+          'lastNameKana'  => 'required|min:1|max:15',
+          'firstNameKana' => 'required|min:1|max:15'
       ];
 
       $messages = [
-        'lastName.required' => '名字は必須項目です',
-        'firstName.required' => '名前は必須項目です',
-        'lastNameKana.required' => '名字カナは必須項目です',
-        'firstNameKana.required' => '名前カナは必須項目です',
+        'lastName.required' => '社員氏名（名字）を再入力してください',
+        'firstName.required' => '社員氏名（名前）を再入力してください',
+        'lastNameKana.required' => '社員カナ（名字）を再入力してください',
+        'firstNameKana.required' => '社員カナ（名前）を再入力してください'
       ];
       // $valid = $request->validate([
       //   $rules
