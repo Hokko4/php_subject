@@ -44,7 +44,8 @@ class EmployeeController extends Controller
           'firstName'     => 'required|min:1|max:5',
           'lastNameKana'  => 'required|min:1|max:15',
           'firstNameKana' => 'required|min:1|max:15',
-          'department'    => 'required'
+          'department'    => 'required',
+          'position'      => 'required'
       ];
 
       $messages = [
@@ -60,7 +61,8 @@ class EmployeeController extends Controller
         'firstName.max' => '5文字以下で入力してください',
         'lastNameKana.max' => '15文字以下で入力してください',
         'firstNameKana.max' => '15文字以下で入力してください',
-        'department.required' => '所属部は必須です'
+        'department.required' => '所属部は必須です',
+        'position.required' => '役職は必須です'
       ];
       // $valid = $request->validate([
       //   $rules
