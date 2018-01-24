@@ -4,6 +4,8 @@
 
 @section('h1', '社員情報入力')
 
+@section('breadcrumb1', 'text-info')
+
 @section('content')
 
   <!-- <div class="panel-body">
@@ -96,7 +98,7 @@
       <!-- position -->
       <div class="col-sm-9 form-group required form-row">
         {!! Form::label('position', '役職', ['class' => 'col-form-label col-sm-3']) !!}
-        {!! Form::select('position', ['1' => '一般'], $employee->position, ['placeholder' => '', 'id' => 'position', 'class' => 'form-control col-sm-3']) !!}
+        {!! Form::select('position', ['1' => '一般', '2' => '係長', '3' => '課長', '4' => '部長'], $employee->position, ['placeholder' => '', 'id' => 'position', 'class' => 'form-control col-sm-3']) !!}
         <small class="form-text text-muted col-auto">※必須</small>
       </div>
 
@@ -104,7 +106,7 @@
       <div class="col-sm-9 form-group form-row">
         {!! Form::label('image', '画像', ['class' => 'col-form-label col-sm-3']) !!}
         {!! Form::url('image', $employee->image, ['id' => 'image', 'class' => 'form-control col-sm-6']) !!}
-        <small class="form-text text-muted col-auto">※任意(http://, https:// で始まる文字列)</small>
+        <small class="form-text text-muted col-auto">※任意(http://, https:// で始まる文字列, 150文字まで)</small>
       </div>
 
       <!-- comments -->

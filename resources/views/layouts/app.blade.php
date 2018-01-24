@@ -11,9 +11,13 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h1>@yield('h1')</h1>
-          <p>
-            <span class="breadcrumb"><b>社員情報入力</b>＞確認＞完了</span>
-          </p>
+          <nav>
+            <ol class="breadcrumb">
+              <li class="@yield('breadcrumb1') breadcrumb-item">社員情報入力</li>
+              <li class="@yield('breadcrumb2') breadcrumb-item">確認</li>
+              <li class="@yield('breadcrumb3') breadcrumb-item">完了</li>
+            </ol>
+          </nav>
         </div>
 
         @yield('content')
