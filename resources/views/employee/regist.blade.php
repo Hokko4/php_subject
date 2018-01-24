@@ -117,7 +117,7 @@
       </div>
 
       <!-- btn -->
-      <div class="col-sm-10 form-group text-center">
+      <div class="col-sm-10 mb-5 form-group text-center">
         <button type="submit" class="btn btn-primary">登録</button>
       </div>
     {!! Form::close() !!}

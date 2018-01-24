@@ -186,7 +186,7 @@
       @endif
 
       <!-- btn -->
-      <div class="form-group">
+      <div class="form-group mb-5">
         <div class="col-sm-9 text-center form-row">
           @if(count($errors) > 0)
             <div class="col-sm-12 justify-content-center">
