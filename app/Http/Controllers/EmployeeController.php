@@ -104,7 +104,7 @@ class EmployeeController extends Controller
       ]);
       $pos->save();
 
-      return view('employee/done')->with('employee', $request);
+      return view('employee/done')->with('employee', $request)->with('employee_id', $lastId);
       // return redirect()->route('emoloyee.regist');
     }
 }
