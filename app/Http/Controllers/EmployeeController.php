@@ -66,15 +66,11 @@ class EmployeeController extends Controller
         'department.required' => '所属部は必須です',
         'position.required' => '役職は必須です'
       ];
-      // $valid = $request->validate([
-      //   $rules
-      // ]);
-      // $valid = $request->validate($rules);
+      
       $valid = Validator::make($input, $rules, $messages);
 
       if($valid->fails()){
         return view('employee/confirm')->withErrors($valid, 'errors')->with('employee', $request);
-        // return redirect('employee/confirm')->withErrors($valid)->withInput();
       }
 
       return view('employee/confirm')->with('employee', $request);
@@ -105,6 +101,5 @@ class EmployeeController extends Controller
       $pos->save();
 
       return view('employee/done')->with('employee', $request)->with('employee_id', $lastId);
-      // return redirect()->route('emoloyee.regist');
     }
 }

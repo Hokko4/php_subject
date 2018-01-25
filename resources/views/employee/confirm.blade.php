@@ -16,11 +16,9 @@
         <div class="col-sm-9 form-group required form-row">
           {!! Form::label('lastName', '社員氏名（名字）', ['class' => 'col-form-label col-sm-3']) !!}
           <div class="col-sm-6 {{ $errors->has('lastName') ? 'has-error' : ''}}">
-            <!-- <p class="form-control-static">{{ $employee->lastName }}</p> -->
             <input type="hidden" name="lastName" value="{{ $employee->lastName }}">
             @if($errors->has('lastName'))
               {!! Form::text('lastName', $employee->lastName, ['id' => 'lastName', 'class' => 'form-control is-invalid']) !!}
-              <!-- <small class="form-text text-muted col-auto">※必須(1-5文字)</small> -->
               <div class="invalid-feedback">{{ $errors->first('lastName') }}</div>
             @else
               {!! Form::text('lastName', $employee->lastName, ['id' => 'lastName', 'class' => 'form-control is-valid']) !!}
@@ -36,9 +34,7 @@
         <div class="col-sm-9 form-group required form-row">
           {!! Form::label('firstName', '社員氏名（名前）', ['class' => 'col-form-label col-sm-3']) !!}
           <div class="col-sm-6 {{ $errors->has('firstName') ? 'has-error' : ''}}">
-            <!-- <p class="form-control-static">{{ $employee->firstName }}</p> -->
             <input type="hidden" name="firstName" value="{{ $employee->firstName }}">
-            <!-- {!! Form::text('firstName', $employee->firstName, ['id' => 'firstName', 'class' => 'form-control']) !!} -->
             @if($errors->has('firstName'))
               {!! Form::text('firstName', $employee->firstName, ['id' => 'firstName', 'class' => 'form-control is-invalid']) !!}
               <div class="invalid-feedback">{{ $errors->first('firstName') }}</div>
@@ -139,7 +135,6 @@
           {!! Form::label('image', '画像', ['class' => 'col-form-label col-sm-3']) !!}
           <div class="col-sm-6">
             <input type="hidden" name="image" value="{{ $employee->image }}">
-            <!-- {!! Form::text('image', $employee->image, ['id' => 'image', 'class' => 'form-control']) !!} -->
             {!! Form::url('image', $employee->image, ['id' => 'image', 'class' => 'form-control col-auto']) !!}
           </div>
           <small class="form-text text-muted col-auto">※任意(http://, https:// で始まる文字列, 150文字まで)</small>
