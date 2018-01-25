@@ -19,6 +19,7 @@ class CreateAffiliationTable extends Migration
             $table->string('manager', 10)->nullable();
             $table->string('sectionChief', 10)->nullable();
             $table->softDeletes();
+            $table->foreign('id')->references('id')->on('employee');
         });
     }
 

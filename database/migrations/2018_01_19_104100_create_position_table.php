@@ -17,6 +17,7 @@ class CreatePositionTable extends Migration
             $table->increments('id');
             $table->string('position', 10);
             $table->softDeletes();
+            $table->foreign('id')->references('id')->on('employee');
         });
     }
 
