@@ -97,15 +97,15 @@
             <input type="hidden" name="sectionChief" value="{{ $employee->sectionChief }}">
             {!! Form::label('department', '部', ['class' => 'col-form-label col-auto']) !!}
             @if($errors->has('department'))
-              {!! Form::select('department', ['1' => '1技'], $employee->department, ['placeholder' => '', 'id' => 'department', 'class' => 'form-control col-sm-3 is-invalid']) !!}
+              {!! Form::select('department', ['1技' => '1技'], $employee->department, ['placeholder' => '', 'id' => 'department', 'class' => 'form-control col-sm-3 is-invalid']) !!}
             @else
-              {!! Form::select('department', ['1' => '1技'], $employee->department, ['placeholder' => '', 'id' => 'department', 'class' => 'form-control col-sm-3 is-valid']) !!}
+              {!! Form::select('department', ['1技' => '1技'], $employee->department, ['placeholder' => '', 'id' => 'department', 'class' => 'form-control col-sm-3 is-valid']) !!}
             @endif
             <small class="form-text text-muted col-auto">※必須</small>
             {!! Form::label('manager', '課', ['class' => 'col-form-label col-auto']) !!}
-            {!! Form::select('manager', ['1' => '1課', '2' => '2課', '3' => '3課'], $employee->manager, ['placeholder' => '', 'id' => 'manager', 'class' => 'form-control col-sm-3']) !!}
+            {!! Form::select('manager', ['1課' => '1課', '2課' => '2課', '3課' => '3課'], $employee->manager, ['placeholder' => '', 'id' => 'manager', 'class' => 'form-control col-sm-3']) !!}
             {!! Form::label('sectionChief', '係', ['class' => 'col-form-label col-auto']) !!}
-            {!! Form::select('sectionChief', ['1' => '1係', '2' => '2係', '3' => '3係'], $employee->sectionChief, ['placeholder' => '', 'id' => 'sectionChief', 'class' => 'form-control col-sm-3']) !!}
+            {!! Form::select('sectionChief', ['1係' => '1係', '2係' => '2係', '3係' => '3係'], $employee->sectionChief, ['placeholder' => '', 'id' => 'sectionChief', 'class' => 'form-control col-sm-3']) !!}
             @if($errors->has('department'))
               <div class="invalid-feedback" style="text-indent: 0.5rem;">{{ $errors->first('department')}}</div>
             @else
@@ -122,10 +122,10 @@
           <div class="col-sm-3 {{ $errors->has($employee->has('position') ? 'has-error' : '')}}">
             <input type="hidden" name="position" value="{{ $employee->position }}">
             @if($errors->has('position'))
-              {!! Form::select('position', ['1' => '一般', '2' => '係長', '3' => '課長', '4' => '部長'], null, ['placeholder' => '', 'id' => 'position', 'class' => 'form-control is-invalid col-auto']) !!}
+              {!! Form::select('position', ['一般' => '一般', '係長' => '係長', '課長' => '課長', '部長' => '部長'], null, ['placeholder' => '', 'id' => 'position', 'class' => 'form-control is-invalid col-auto']) !!}
               <div class="invalid-feedback">{{ $errors->first('position')}}</div>
             @else
-              {!! Form::select('position', ['1' => '一般', '2' => '係長', '3' => '課長', '4' => '部長'], null, ['placeholder' => '', 'id' => 'position', 'class' => 'form-control is-valid col-auto']) !!}
+              {!! Form::select('position', ['一般' => '一般', '係長' => '係長', '課長' => '課長', '部長' => '部長'], null, ['placeholder' => '', 'id' => 'position', 'class' => 'form-control is-valid col-auto']) !!}
               <div class="valid-feedback">
                 <p>OK!</p>
               </div>

@@ -87,18 +87,18 @@
       <div class="col-sm-9 form-group required form-row">
         {!! Form::label('department', '所属', ['class' => 'col-form-label col-sm-3']) !!}
         {!! Form::label('department', '部', ['class' => 'col-form-label col-auto']) !!}
-        {!! Form::select('department', ['1' => '1技'], $employee->department, ['placeholder' => '', 'id' => 'department', 'class' => 'form-control col-sm-2']) !!}
+        {!! Form::select('department', ['1技' => '1技'], $employee->department, ['placeholder' => '', 'id' => 'department', 'class' => 'form-control col-sm-2']) !!}
         <small class="form-text text-muted col-auto">※必須</small>
         {!! Form::label('manager', '課', ['class' => 'col-form-label col-auto']) !!}
-        {!! Form::select('manager', ['1' => '1課', '2' => '2課', '3' => '3課'], $employee->manager, ['placeholder' => '', 'id' => 'manager', 'class' => 'form-control col-sm-2']) !!}
+        {!! Form::select('manager', ['1課' => '1課', '2課' => '2課', '3課' => '3課'], $employee->manager, ['placeholder' => '', 'id' => 'manager', 'class' => 'form-control col-sm-2']) !!}
         {!! Form::label('sectionChief', '係', ['class' => 'col-form-label col-auto']) !!}
-        {!! Form::select('sectionChief', ['1' => '1係', '2' => '2係', '3' => '3係'], $employee->sectionChief, ['placeholder' => '', 'id' => 'sectionChief', 'class' => 'form-control col-sm-2']) !!}
+        {!! Form::select('sectionChief', ['1係' => '1係', '2係' => '2係', '3係' => '3係'], $employee->sectionChief, ['placeholder' => '', 'id' => 'sectionChief', 'class' => 'form-control col-sm-2']) !!}
       </div>
 
       <!-- position -->
       <div class="col-sm-9 form-group required form-row">
         {!! Form::label('position', '役職', ['class' => 'col-form-label col-sm-3']) !!}
-        {!! Form::select('position', ['1' => '一般', '2' => '係長', '3' => '課長', '4' => '部長'], $employee->position, ['placeholder' => '', 'id' => 'position', 'class' => 'form-control col-sm-3']) !!}
+        {!! Form::select('position', ['一般' => '一般', '係長' => '係長', '課長' => '課長', '部長' => '部長'], $employee->position, ['placeholder' => '', 'id' => 'position', 'class' => 'form-control col-sm-3']) !!}
         <small class="form-text text-muted col-auto">※必須</small>
       </div>
 
