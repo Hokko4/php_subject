@@ -27,7 +27,9 @@ class CreateEmployeeTable extends Migration
         });
 
         // db raw で初期値設定した
-        DB::statement("alter table employee serial = 10001;");
+        DB::statement("create sequence employee_id_seq");
+        DB::statement("alter table employee alter column id set default nextval('employee_id_seq');");
+        DB::statement("select setval('employee_id_seq', 10001);");
     }
 
     /**
