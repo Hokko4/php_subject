@@ -14,7 +14,8 @@ class CreateEmployeeTable extends Migration
     public function up()
     {
         Schema::create('employee', function (Blueprint $table) {
-            $table->increments('id')->default(10001);
+            // $table->unsignedInteger('id')->default(10001);
+            $table->increments('id');
             $table->string('lastName', 5);
             $table->string('firstName', 5);
             $table->string('lastNameKana', 15);
@@ -24,6 +25,9 @@ class CreateEmployeeTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        // db raw で初期値設定した
+        DB::statement("alter table employee auto_increment = 10001;");
     }
 
     /**
