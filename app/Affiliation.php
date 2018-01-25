@@ -11,6 +11,7 @@ class Affiliation extends Model
     use SoftDeletes;
 
     protected $fillable = [
+      'id',
       'department',
       'manager',
       'sectionChief'
@@ -20,5 +21,5 @@ class Affiliation extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $timestamps = false;
+    public $timestamps = false;
 }

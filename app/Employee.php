@@ -21,4 +21,6 @@ class Employee extends Model
 
     //明示的にテーブル名を指定する
     protected $table = 'employee';
+
+    protected $dates = ['deleted_at'];
 }

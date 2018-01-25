@@ -11,6 +11,7 @@ class Position extends Model
     use SoftDeletes;
 
     protected $fillable = [
+      'id',
       'position'
     ];
 
@@ -18,5 +19,5 @@ class Position extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $timestamps = false;
+    public $timestamps = false;
 }

@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Employee;
+use App\Affiliation;
+use App\Position;
 use App\Http\Requests;
 
 use App\Http\Controllers\Controller;
@@ -82,6 +84,26 @@ class EmployeeController extends Controller
       $emp = new Employee();
       $emp->fill($request->all());
       $emp->save();
+
+      //last insert id
+      $lastId = $emp->id;
+
+      $afi = new Affiliation();
+      $afi->fill([
+        'id' => $lastId,
+        'department' => $request->department,
+        'manager' => $request->manager,
+        'sectionChief' => $request->sectionChief
+      ]);
+      $afi->save();
+
+      $pos = new Position();
+      $pos->fill([
+        'id' => $lastId,
+        'position' => $request->position
+      ]);
+      $pos->save();
+
       return view('employee/done')->with('employee', $request);
       // return redirect()->route('emoloyee.regist');
     }
