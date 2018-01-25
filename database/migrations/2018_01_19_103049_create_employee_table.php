@@ -27,7 +27,7 @@ class CreateEmployeeTable extends Migration
         });
 
         // db raw で初期値設定した
-        DB::statement("alter table employee auto_increment = 10001;");
+        DB::statement("alter table employee serial = 10001;");
     }
 
     /**
