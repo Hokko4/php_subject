@@ -6,6 +6,10 @@
 
 @section('breadcrumb1', 'text-info')
 
+@section('link')
+  <li class="navbar-item ml-auto mr-3"><a href="./list">社員情報一覧</a></li>
+@endsection
+
 @section('content')
 
   <div class="panel-body">
@@ -74,7 +78,7 @@
       </div>
 
       <!-- btn -->
-      <div class="col-sm-10 mb-5 form-group text-center">
+      <div class="col-sm-9 mb-5 form-group text-center">
         <button type="submit" class="btn btn-primary">登録</button>
       </div>
     {!! Form::close() !!}

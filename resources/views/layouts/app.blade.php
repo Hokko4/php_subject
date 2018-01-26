@@ -16,6 +16,7 @@
               <li class="@yield('breadcrumb1') breadcrumb-item">社員情報入力</li>
               <li class="@yield('breadcrumb2') breadcrumb-item">確認</li>
               <li class="@yield('breadcrumb3') breadcrumb-item">完了</li>
+              @yield('link')
             </ol>
           </nav>
         </div>
