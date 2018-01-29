@@ -17,18 +17,19 @@ class Test1 extends TestCase
     // {
     //     $this->assertTrue(true);
     // }
+    //phpunitの仕様でメソッド名の頭に「test」をつけるらしい。
 
-    public function httpRoute() {
+    public function testHttpRoute() {
       $res = $this->get('/employee');
       $res->assertSuccessful(200);
     }
 
-    public function registRoute() {
+    public function testRegistRoute() {
       $res = $this->get('/employee/regist');
       $res->assertStatus(200);
     }
 
-    public function notFound() {
+    public function testNotFound() {
       $this->get('/test')->assertStatus(404);
     }
 }
