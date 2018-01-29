@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>社員情報一覧</title>
-  </head>
-  <body>
-    <h1>社員情報一覧</h1>
-  </body>
-</html>
+@extends('layouts.listTemplate')
+
+@section('title', '社員情報一覧')
+
+@section('h1', '社員情報一覧')
+
+@section('content')
+
+
+
+@endsection
