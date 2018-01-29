@@ -21,12 +21,24 @@ class Test1 extends TestCase
 
     public function testHttpRoute() {
       $res = $this->get('/employee');
-      $res->assertSuccessful(200);
+      $res->assertSuccessful();
     }
 
     public function testRegistRoute() {
       $res = $this->get('/employee/regist');
       $res->assertStatus(200);
+    }
+
+    public function testConfirmRoute() {
+      $this->get('/employee/confirm')->assertStatus(405);
+    }
+
+    public function testDoneRoute() {
+      $this->get('/employee/done')->assertStatus(405);
+    }
+
+    public function testListRoute() {
+      $this->get('/employee/list')->assertStatus(200);
     }
 
     public function testNotFound() {
