@@ -12,8 +12,18 @@
         <div class="panel-heading">
           <h1>@yield('h1')</h1>
           <nav class="navbar">
-            <a href="./regist" class="ml-auto my-1 navbar-link">社員情報入力</a>
+            <a href="/employee/regist" class="ml-auto my-1 navbar-link">社員情報入力</a>
           </nav>
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">社員番号</span>
+          </div>
+          <input type="text" name="id" value="" class="form-control">
+          <div class="input-group-append">
+            <button type="submit" name="search" class="form-control btn btn-outline-secondary" formaction="search">検索</button>
+          </div>
         </div>
 
         @yield('content')
