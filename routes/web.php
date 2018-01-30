@@ -18,9 +18,7 @@ Route::get('/', function () {
 // Route::resource('employee', 'EmployeeController');
 Route::get('/employee', 'EmployeeController@regist')->name('employee');
 
-Route::get('/employee/list', function() {
-  return view('employee/list');
-})->name('employee.list');
+Route::get('/employee/list', 'EmployeeController@list')->name('employee.list');
 
 Route::get('/employee/detail', function() {
   return view('employee/detail');
