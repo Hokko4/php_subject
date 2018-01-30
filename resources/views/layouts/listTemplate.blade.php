@@ -12,7 +12,8 @@
         <div class="panel-heading">
           <h1>@yield('h1')</h1>
           <nav class="navbar">
-            {{ link_to('/employee/regist', '社員情報入力', ['class' => 'ml-auto my-1 navbar-link']) }}
+            <!-- <a href="" class="ml-auto my-1 navbar-link">社員情報入力</a> -->
+            {{ link_to('/employee/regist', '社員情報入力', ['class' => 'ml-auto my-1 navbar-link'], null) }}
           </nav>
         </div>
 

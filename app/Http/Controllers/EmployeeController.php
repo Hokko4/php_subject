@@ -105,7 +105,10 @@ class EmployeeController extends Controller
 
     public function list(Request $request) {
       $empl = Employee::all();
-    
+      // if (is_null($emp)) {
+      //   // echo 'No Employee Found';
+      //   // return;
+
       return view('employee/list')->with('employee', $empl);
     }
 }
