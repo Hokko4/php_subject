@@ -23,4 +23,11 @@ class Employee extends Model
     protected $table = 'employee';
 
     protected $dates = ['deleted_at'];
+
+    protected $primaryKey = 'id';
+
+    public function affiliation()
+    {
+      return $this->hasOne('App\Affiliation', 'id');
+    }
 }

@@ -66,7 +66,7 @@ class EmployeeController extends Controller
         'department.required' => '所属部は必須です',
         'position.required' => '役職は必須です'
       ];
-      
+
       $valid = Validator::make($input, $rules, $messages);
 
       if($valid->fails()){
@@ -101,5 +101,24 @@ class EmployeeController extends Controller
       $pos->save();
 
       return view('employee/done')->with('employee', $request)->with('employee_id', $lastId);
+    }
+
+    public function list(Request $request) {
+      $empl = Employee::find(10001);
+      // if (is_null($emp)) {
+      //   // echo 'No Employee Found';
+      //   // return;
+      // }
+      $emp_afi = $empl->affiliation;
+
+      // if($emp->affiliation()) {
+      //   // echo 'The id is ' . $emp->affiliation->id;
+      //   // var_dump($emp);
+      // }
+
+      // $emp->affiliation()->where('lastName', 'aaa')->get();
+      // $test = $emp->affiliations;
+
+      return view('employee/list')->with('employee', $empl)->with('afi', $emp_afi);
     }
 }
