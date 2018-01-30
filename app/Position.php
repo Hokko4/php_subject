@@ -20,4 +20,9 @@ class Position extends Model
     protected $dates = ['deleted_at'];
 
     public $timestamps = false;
+
+    public function employee()
+    {
+      return $this->belongsTo('Employee');
+    }
 }

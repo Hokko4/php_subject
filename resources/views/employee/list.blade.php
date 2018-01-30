@@ -6,6 +6,10 @@
 
 @section('content')
 
-
+  <div class="panel-body">
+    @foreach($employee as $emp)
+      <p>{{ $emp->id . ': ' . $emp->lastName . $emp->firstName }}</p>
+    @endforeach
+  </div>
 
 @endsection

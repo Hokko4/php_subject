@@ -28,6 +28,11 @@ class Employee extends Model
 
     public function affiliation()
     {
-      return $this->hasOne('App\Affiliation', 'id');
+      return $this->hasOne('Affiliation', 'id');
+    }
+
+    public function position()
+    {
+      return $this->hasOne('Position', 'id');
     }
 }

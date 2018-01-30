@@ -104,21 +104,11 @@ class EmployeeController extends Controller
     }
 
     public function list(Request $request) {
-      $empl = Employee::find(10001);
+      $empl = Employee::all();
       // if (is_null($emp)) {
       //   // echo 'No Employee Found';
       //   // return;
-      // }
-      $emp_afi = $empl->affiliation;
 
-      // if($emp->affiliation()) {
-      //   // echo 'The id is ' . $emp->affiliation->id;
-      //   // var_dump($emp);
-      // }
-
-      // $emp->affiliation()->where('lastName', 'aaa')->get();
-      // $test = $emp->affiliations;
-
-      return view('employee/list')->with('employee', $empl)->with('afi', $emp_afi);
+      return view('employee/list')->with('employee', $empl);
     }
 }
