@@ -12,11 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect()->route('employee.list');
 });
 
 // Route::resource('employee', 'EmployeeController');
-Route::get('/employee', 'EmployeeController@regist')->name('employee');
+Route::get('/employee', 'EmployeeController@list')->name('employee');
 
 Route::get('/employee/list', 'EmployeeController@list')->name('employee.list');
 
