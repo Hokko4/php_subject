@@ -23,6 +23,6 @@ class Position extends Model
 
     public function employee()
     {
-      return $this->belongsTo('Employee');
+      return $this->belongsTo('App\Employee');
     }
 }
