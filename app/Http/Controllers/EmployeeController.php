@@ -35,7 +35,9 @@ class EmployeeController extends Controller
     }
 
     public function regist() {
-      return view('employee/regist')->with('employee', new Employee());
+      // return view('employee/regist')->with('employee', new Employee());
+      $employee = new Employee();
+      return view('employee/regist', compact('employee'));
     }
 
     public function confirm(Request $request) {
@@ -68,12 +70,15 @@ class EmployeeController extends Controller
       ];
 
       $valid = Validator::make($input, $rules, $messages);
+      $employee = $request;
 
       if($valid->fails()){
-        return view('employee/confirm')->withErrors($valid, 'errors')->with('employee', $request);
+        // return view('employee/confirm')->withErrors($valid, 'errors')->with('employee', $request);
+        return view('employee/confirm', compact('employee'))->withErrors($valid, 'errors');
       }
 
-      return view('employee/confirm')->with('employee', $request);
+      // return view('employee/confirm')->with('employee', $request);
+      return view('employee/confirm', compact('employee'));
     }
 
     public function done(Request $request) {
@@ -100,12 +105,16 @@ class EmployeeController extends Controller
       ]);
       $pos->save();
 
-      return view('employee/done')->with('employee', $request)->with('employee_id', $lastId);
+      // return view('employee/done')->with('employee', $request)->with('employee_id', $lastId);
+      $employee = $request;
+      $employee_id = $lastId;
+      return view('employee/done', compact('employee', 'employee_id'));
     }
 
     public function list(Request $request) {
-      $empl = Employee::all();
+      $employee = Employee::all();
 
-      return view('employee/list')->with('employee', $empl);
+      // return view('employee/list')->with('employee', $empl);
+      return view('employee/list', compact('employee'));
     }
 }
