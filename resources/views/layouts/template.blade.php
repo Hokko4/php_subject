@@ -12,8 +12,10 @@
         <div class="panel-heading">
           <!-- <h1>@yield('h1')</h1> -->
           <nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-end mt-3 mb-5">
-            <a href="/employee/list" class="nav-link">社員情報一覧</a>
-            <a href="/employee/regist" class="nav-link">社員情報登録</a>
+            <!-- <a href="/employee/list" class="nav-link">社員情報一覧</a>
+            <a href="/employee/regist" class="nav-link">社員情報登録</a> -->
+            {{ link_to('/employee/list', '社員情報一覧', ['class' => 'nav-link']) }}
+            {{ link_to('/employee/regist', '社員情報登録', ['class' => 'nav-link']) }}
           </nav>
         </div>
 
