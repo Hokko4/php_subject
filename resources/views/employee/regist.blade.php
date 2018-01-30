@@ -7,7 +7,9 @@
 @section('breadcrumb1', 'text-info')
 
 @section('link')
-  <li class="navbar-item ml-auto mr-3"><a href="/employee/list">社員情報一覧</a></li>
+  <li class="navbar-item ml-auto mr-3">
+    {{ link_to('/employee/list', '社員情報一覧') }}
+  </li>
 @endsection
 
 @section('content')
